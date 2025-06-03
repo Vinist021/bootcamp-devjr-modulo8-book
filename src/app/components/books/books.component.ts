@@ -10,6 +10,7 @@ export class BooksComponent {
 
   book: Book = {} as Book;
   isUpdate: boolean = false;
+  idCount: number = 5;
 
   books: Book[] = [
     {
@@ -40,11 +41,12 @@ export class BooksComponent {
 
   saveBook() {
     if(!this.isUpdate) {
-      this.book.id = this.books.length + 1;
+      this.book.id = this.idCount++;
       this.books.push(this.book);
     } 
 
     this.book = {} as Book;
+    this.isUpdate = false;
 
   } 
 
