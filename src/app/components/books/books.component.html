@@ -9,6 +9,7 @@
                 <th>Título</th>
                 <th>Autor</th>
                 <th>Preço</th>
+                <th>Opções</th>
             </tr>
         </thead>
         <tbody>
@@ -17,6 +18,10 @@
                 <td>{{book.title}}</td>
                 <td>{{book.author}}</td>
                 <td>{{book.price}}</td>
+                <td>
+                    <button class="btn btn-success me-2">Alterar</button>
+                    <button class="btn btn-danger">Remover</button>
+                </td>
             </tr>
         </tbody>
     </table>

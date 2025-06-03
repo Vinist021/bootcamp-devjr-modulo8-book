@@ -2,21 +2,21 @@
     <h3>Cadastro</h3>
     <form #formBook="ngForm">
         <div class="row">
-            <label for="title" class="col-form-label">Título:
+            <label for="title" class="form-label">Título:
                 <div>
                     <input type="text" class="form-control" [(ngModel)]="book.title" name="title" id="title" required>
                 </div>
             </label>
         </div>
         <div class="row">
-            <label for="author" class="col-form-label">Autor:
+            <label for="author" class="form-label">Autor:
                 <div>
                     <input type="text" class="form-control" [(ngModel)]="book.author" name="author" id="author" required>
                 </div>
             </label>
         </div>
         <div class="row">
-            <label for="price" class="col-form-label">Preço:
+            <label for="price" class="form-label">Preço:
                 <div>
                     <input type="text" class="form-control" [(ngModel)]="book.price" name="price" id="price" required>
                 </div>
