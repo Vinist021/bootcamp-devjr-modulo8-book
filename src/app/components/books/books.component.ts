@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Book } from '../../Book';
 
 @Component({
@@ -8,7 +8,8 @@ import { Book } from '../../Book';
 })
 export class BooksComponent {
 
-  newBook: Book = {} as Book;
+  book: Book = {} as Book;
+  isUpdate: boolean = false;
 
   books: Book[] = [
     {
@@ -38,9 +39,23 @@ export class BooksComponent {
   ];
 
   saveBook() {
-    this.newBook.id = this.books.length + 1;
-    this.books.push(this.newBook);
-    this.newBook = {} as Book;
+    if(!this.isUpdate) {
+      this.book.id = this.books.length + 1;
+      this.books.push(this.book);
+    } 
+
+    this.book = {} as Book;
+
   } 
 
+  update(selectedBook: Book) {
+    this.book = selectedBook;
+    this.isUpdate = true;
+  }
+
+  remove(book: Book) {
+    this.books = this.books.filter(b => b.id !== book.id);
+    this.book = {} as Book;
+  }
+  
 }

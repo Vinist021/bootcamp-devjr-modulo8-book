@@ -15,9 +15,9 @@ export class BookComponent {
   @Output()
   saveEmitter = new EventEmitter();
 
-
   save() {
     this.saveEmitter.emit();
   }
 
+  
 }
